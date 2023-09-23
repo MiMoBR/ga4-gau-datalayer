@@ -1,14 +1,17 @@
 import logo from './logo.svg'
 import './App.css'
 // import ReactGA from 'react-ga' // 1 - Library GAU direct without dataLayer
-// import TagManager from 'react-gtm-module' // 2 - Library GTM to send event by dataLayer
+import TagManager from 'react-gtm-module' // 2 - Library GTM to send event by dataLayer
 // import ReactGA from "react-ga4" // 3 - Library GA4 direct without dataLayer - https://www.npmjs.com/package/react-ga4
 
 
 //ReactGA.initialize('UA-91207311-17')// 1 - Library GAU direct without dataLayer
 
-// const tagManagerArgs = { gtmId: 'GTM-5WPGFTD'}// 2 - Library GTM to send event by dataLayer
-// TagManager.initialize(tagManagerArgs)// 2 - Library GTM to send event by dataLayer
+
+// GA4 - PROPERTY ID: 332041732 - MEASUREMENT ID G-DNMRELNT2D
+
+const tagManagerArgs = { gtmId: 'GTM-WV45BL3'}// 2 - Library GTM to send event by dataLayer
+TagManager.initialize(tagManagerArgs)// 2 - Library GTM to send event by dataLayer
 
 // ReactGA.initialize("G-K6MBY9B33E"); // 3 - Library GA4 direct without dataLayer
 
@@ -22,12 +25,12 @@ function App() {
   //   })
   // }
   // const CreateDL = () => {// 2 - Library GTM to send event by dataLayer
-    // window.dataLayer.push({
-    //   event: 'gauCustomEvent',
-    //   action: 'clickActionTest2',
-    //   category: 'menuCategoryTest2',
-    //   label: 'label2'
-    // });
+  //   window.dataLayer.push({
+  //     event: 'gauCustomEvent',
+  //     action: 'clickActionTest2',
+  //     category: 'menuCategoryTest2',
+  //     label: 'label2'
+  //   });
   // }
   // const TrackEventGa4 = (category ,action ,label ,value , nonInteraction) => { // 3 - Library GA4 direct without dataLayer
   //   ReactGA.send("ga4CustomEvent");
@@ -66,7 +69,7 @@ function App() {
 //console.log('test 2');
   //</script>
 
-  const GtagEventGA4 = () => {
+  const GtagEventGA4 = () => { // Create DL
     window.gtag("event", "ga4CustomEventGTAG", {
       event_action:   "ga4CustomEventGTAGAction",
       event_category: "ga4CustomEventGTAGCategory",
@@ -86,11 +89,11 @@ function App() {
         <p className="App-link"
           onClick={ () => {
             // TrackEvent('clickActionTest', 'menuCategoryTest', 'testLabel'); // 1 - Library GAU direct without dataLayer
-            // CreateDL(); // 2 - Library GTM to send event by dataLayer
+            //CreateDL(); // 2 - Library GTM to send event by dataLayer
             // TrackEventGa4('clickActionTestGA4', 'menuCategoryTestGA4', 'testLabelGA4', 99, true); // 3 - Library GA4 direct without dataLayer
-            GtagEventGA4()
+            GtagEventGA4() // To create a Data Layer
           }}
-        >Learn React</p>
+        >Click here!</p>
       </header>
     </div>
   );
