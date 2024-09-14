@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TagManager from 'react-gtm-module';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const tagManagerArgs = { gtmId: 'GTM-WV45BL3'}
+// console.log('tagManagerArgs  ---  ',tagManagerArgs)
+TagManager.initialize(tagManagerArgs)
+
 root.render(
   <React.StrictMode>
-    <App />
+      <App />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
